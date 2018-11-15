@@ -17,6 +17,7 @@ public class UserImpl implements UserAPI {
 
     @Override
     public boolean login(String userName, String password) {
+        System.out.println("this is user service!!"+userName+","+password);
         return true;
     }
 }
