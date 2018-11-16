@@ -100,9 +100,9 @@ public class UserServiceImpl implements UserAPI {
         MoocUserT moocUserT = new MoocUserT();
         moocUserT.setUuid(userInfoModel.getUuid());
         moocUserT.setUserSex(userInfoModel.getSex());
-        moocUserT.setUpdateTime(time2Date(System.currentTimeMillis()));
+        moocUserT.setUpdateTime(null);
         moocUserT.setNickName(userInfoModel.getNickname());
-        moocUserT.setBeginTime(time2Date(userInfoModel.getCreateTime()));
+        moocUserT.setBeginTime(null);
         moocUserT.setLifeState(userInfoModel.getLifeState());
         moocUserT.setHeadUrl(userInfoModel.getHeadAddress());
         moocUserT.setBirthday(userInfoModel.getBirthday());
@@ -118,10 +118,6 @@ public class UserServiceImpl implements UserAPI {
         } else {
             return userInfoModel;
         }
-    }
-
-    private Date time2Date(long time) {
-        return new Date(time);
     }
 
     private UserInfoModel do2UserInfo(MoocUserT moocUserT) {

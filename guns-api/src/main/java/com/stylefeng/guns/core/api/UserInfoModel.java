@@ -1,5 +1,6 @@
 package com.stylefeng.guns.core.api;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Date;
  * @date 2018-11-15 15:34
  * @description
  */
-public class UserInfoModel {
+public class UserInfoModel implements Serializable {
 
     private int uuid;
 
