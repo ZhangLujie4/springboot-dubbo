@@ -21,8 +21,9 @@ import java.util.Date;
  * @description
  */
 
+// 配置轮询的负载均衡策略
 @Component
-@Service(interfaceClass = UserAPI.class)
+@Service(interfaceClass = UserAPI.class, loadbalance = "roundrobin")
 public class UserServiceImpl implements UserAPI {
 
     @Autowired
