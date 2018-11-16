@@ -8,5 +8,13 @@ package com.stylefeng.guns.core.api;
  */
 public interface UserAPI {
 
-    boolean login(String userName, String password);
+    int login(String username, String password);
+
+    boolean register(UserModel userModel);
+
+    boolean checkUsername(String username);
+
+    UserInfoModel getUserInfo(int uuid);
+
+    UserInfoModel updateUserInfo(UserInfoModel userInfoModel);
 }
