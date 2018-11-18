@@ -2,17 +2,14 @@ package com.stylefeng.guns.rest.modular.user;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.stylefeng.guns.core.api.UserAPI;
-import com.stylefeng.guns.core.api.UserInfoModel;
-import com.stylefeng.guns.core.api.UserModel;
+import com.stylefeng.guns.core.api.user.UserApi;
+import com.stylefeng.guns.core.api.user.vo.UserInfoModel;
+import com.stylefeng.guns.core.api.user.vo.UserModel;
 import com.stylefeng.guns.core.util.MD5Util;
 import com.stylefeng.guns.rest.common.persistence.dao.MoocUserTMapper;
 import com.stylefeng.guns.rest.common.persistence.model.MoocUserT;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import sun.security.provider.MD5;
-
-import java.util.Date;
 
 /**
  * @author Tori
@@ -23,8 +20,8 @@ import java.util.Date;
 
 // 配置轮询的负载均衡策略
 @Component
-@Service(interfaceClass = UserAPI.class, loadbalance = "roundrobin")
-public class UserServiceImpl implements UserAPI {
+@Service(interfaceClass = UserApi.class, loadbalance = "roundrobin")
+public class UserServiceImpl implements UserApi {
 
     @Autowired
     private MoocUserTMapper moocUserTMapper;

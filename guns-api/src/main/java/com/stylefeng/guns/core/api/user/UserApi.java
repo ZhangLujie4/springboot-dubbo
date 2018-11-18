@@ -1,4 +1,7 @@
-package com.stylefeng.guns.core.api;
+package com.stylefeng.guns.core.api.user;
+
+import com.stylefeng.guns.core.api.user.vo.UserInfoModel;
+import com.stylefeng.guns.core.api.user.vo.UserModel;
 
 /**
  * @author Tori
@@ -6,7 +9,7 @@ package com.stylefeng.guns.core.api;
  * @date 2018-11-15 13:59
  * @description
  */
-public interface UserAPI {
+public interface UserApi {
 
     int login(String username, String password);
 

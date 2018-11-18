@@ -1,11 +1,14 @@
 package com.stylefeng.guns.rest.vo;
 
+import lombok.Data;
+
 /**
  * @author Tori
  * @version V1.0.0
  * @date 2018-11-15 15:52
  * @description
  */
+@Data
 public class ResponseVO<T> {
 
     // 返回状态码
@@ -14,34 +17,19 @@ public class ResponseVO<T> {
     // 返回信息
     private String msg;
 
+    private String imgPre;
+
     // 返回数据实体
     private T data;
 
-    public Integer getStatus() {
-        return status;
-    }
+    public static<T> ResponseVO success(String imgPre, T t) {
+        ResponseVO responseVO = new ResponseVO();
+        responseVO.setStatus(0);
+        responseVO.setData(t);
+        responseVO.setImgPre(imgPre);
 
-    public void setStatus(Integer status) {
-        this.status = status;
+        return responseVO;
     }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    private ResponseVO(){}
 
     public static<T> ResponseVO success(T t) {
         ResponseVO responseVO = new ResponseVO();

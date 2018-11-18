@@ -49,6 +49,7 @@ public class DefaultFastjsonConfig {
                 SerializerFeature.WriteEnumUsingToString
         );
         fastJsonConfig.setDateFormat("yyyy-MM-dd HH:mm:ss");
+        // 将null值转换成空字符串
         ValueFilter valueFilter = new ValueFilter() {
             public Object process(Object o, String s, Object o1) {
                 if (null == o1) {

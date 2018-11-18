@@ -1,20 +1,14 @@
 package com.stylefeng.guns.rest.modular.auth.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.stylefeng.guns.core.api.UserAPI;
-import com.stylefeng.guns.core.exception.GunsException;
-import com.stylefeng.guns.rest.common.exception.BizExceptionEnum;
+import com.stylefeng.guns.core.api.user.UserApi;
 import com.stylefeng.guns.rest.modular.auth.controller.dto.AuthRequest;
 import com.stylefeng.guns.rest.modular.auth.controller.dto.AuthResponse;
 import com.stylefeng.guns.rest.modular.auth.util.JwtTokenUtil;
-import com.stylefeng.guns.rest.modular.auth.validator.IReqValidator;
 import com.stylefeng.guns.rest.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 
 /**
  * 请求验证的
@@ -29,8 +23,8 @@ public class AuthController {
     private JwtTokenUtil jwtTokenUtil;
 
 
-    @Reference(interfaceClass = UserAPI.class, check = false)
-    private UserAPI userAPI;
+    @Reference(interfaceClass = UserApi.class, check = false)
+    private UserApi userAPI;
 
     @RequestMapping(value = "${jwt.auth-path}")
     public ResponseVO<?> createAuthenticationToken(AuthRequest authRequest) {
